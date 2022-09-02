@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 /* Box sizing rules */
 *,
 *::before,
@@ -71,4 +73,47 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* CSS variables */
+:root {
+  /* colors */
+  --clr-red: hsl(0, 100%, 74%);
+  --clr-green: hsl(154, 59%, 51%);
+  --clr-darker-green: hsl(154, 59%, 46%);
+  --clr-blue: hsl(248, 32%, 49%);
+  --clr-neutral-600: hsl(249, 10%, 26%);
+  --clr-neutral-600-25: hsla(249, 10%, 26%, 0.25);
+  --clr-neutral-600-50: hsla(249, 10%, 26%, 0.5);
+  --clr-neutral-400: hsl(246, 25%, 77%);
+  --clr-neutral-0: hsl(0, 0%, 100%);
+
+  /* font families */
+  --ff-sans: 'Poppins', sans-serif;
+
+  /* font weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* font sizes */
+  --fs-400: 1rem;
+}
+
+body {
+  font-family: var(--ff-sans);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-400);
+}
+
+.visually-hidden {
+  border-width: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
 }
