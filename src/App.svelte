@@ -28,4 +28,15 @@
     gap: 3em;
     padding-inline: 1.5em;
   }
+
+  @media (min-width: 36rem) {
+    .container {
+      max-width: 74rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding-inline: 2em;
+      gap: 2.5em;
+    }
+  }
 </style>

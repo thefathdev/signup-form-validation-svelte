@@ -120,7 +120,7 @@
         ></svg
       >
     </div>
-    <div class="form__field">
+    <div class="form__field email">
       <label for="email" class="visually-hidden">Email Address</label>
       <input
         data-state={contactInfoValidation.email}
@@ -246,6 +246,10 @@
   .form__field input[data-state='invalid']::placeholder {
     opacity: 0;
   }
+  .form__field.email input[data-state='invalid']::placeholder {
+    opacity: 1;
+    color: var(--clr-red);
+  }
 
   .form__field input::placeholder {
     color: var(--clr-neutral-600-);
@@ -299,5 +303,15 @@
   .term-service span {
     font-weight: var(--fw-bold);
     color: var(--clr-red);
+  }
+
+  @media (min-width: 36rem) {
+    .form__field input {
+      padding: 1em 2em;
+    }
+
+    .form__field svg {
+      transform: translateX(-50%) translateY(70%);
+    }
   }
 </style>

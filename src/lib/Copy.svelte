@@ -19,4 +19,16 @@
     text-align: center;
     line-height: 1.6;
   }
+
+  @media (min-width: 36rem) {
+    .heading {
+      margin-bottom: 0.6em;
+      text-align: start;
+      font-size: 3em;
+      line-height: 1.2;
+    }
+    .lead {
+      text-align: start;
+    }
+  }
 </style>
