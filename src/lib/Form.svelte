@@ -40,6 +40,20 @@
     }
   }
 
+  // Validate password
+  const passRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/
+  $: {
+    let passwordValidation = contactInfo.password.match(passRegex)
+    if (!passwordValidation && contactInfo.password.length > 0) {
+      errorMessage.password =
+        'Password must be 6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter'
+      contactInfoValidation.password = 'invalid'
+    } else {
+      errorMessage.password = ''
+      contactInfoValidation.password = 'valid'
+    }
+  }
+
   // Validate form when submit
   const handleSubmit = () => {
     let valid = true
@@ -55,6 +69,20 @@
           valid = true
         }
       }
+    }
+    let emailValidation = contactInfo.email.match(validRegex)
+    if (!emailValidation && contactInfo.email.length > 0) {
+      errorMessage.email = 'Look like this is not an email'
+      contactInfoValidation.email = 'invalid'
+      valid = false
+    }
+
+    let passwordValidation = contactInfo.password.match(validRegex)
+    if (!passwordValidation && contactInfo.email.length > 0) {
+      errorMessage.password =
+        'Password must be 6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter'
+      contactInfoValidation.password = 'invalid'
+      valid = false
     }
 
     valid ? console.log('sign up success') : console.log('error')
